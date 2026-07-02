@@ -1,13 +1,36 @@
-<html>
-    <head>
-        <title>My Articles</title>
-    </head>
-    <body>
-        <header>
-            <h1>My Articles</h1>
-        </header>
-        <main>
-            <h1>Comming Soon</h1>
-        </main>
-    </body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Articles</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="theme-light">
+    <header class="top-bar">
+        <div class="nav-group">
+            <button id="btn-home" class="nav-btn" onclick="app.goHome()">HOME</button>
+            <a href="../../Pages/about-index.html" class="nav-btn">ABOUT</a>
+        </div>
+    </header>
+    <section id="welcome-screen" class="fullscreen-section">
+        <div class="welcome-content">
+            <h1 class="welcome-title">Welcome</h1>
+            <p class="welcome-sub">This is my personal space where I upload my articles</p>
+            <button id="enter-btn" class="glass-btn">Articles</button>
+        </div>
+    </section>
+    <main id="main-hub" class="hub-container hidden">
+        <div class="grid-layout" id="article-grid">
+        </div>
+    </main>
+    <div class="student-warning">
+        Contents may contain errors. Verify first.
+    </div>
+    <footer class="main-footer">
+        <p>&copy; 2026 WASI. ALL RIGHTS RESERVED.</p>
+    </footer>
+    <script src="config.js"></script>
+    <script src="app.js"></script>
+</body>
 </html>
