@@ -16,7 +16,6 @@ body.library-theme {
     background: radial-gradient(Circle at top right, var(--bg-dark), rgb(141, 250, 129));
     color: var(--text);
     overflow-x: hidden;
-    /* Subtle paper texture overlay */
     position: relative;
 }
 
@@ -32,7 +31,6 @@ body.library-theme::before {
     opacity: 0.03;
 }
 
-/* INTRO OVERLAY ANIMATION */
 .intro-overlay {
     position: fixed;
     inset: 0;
@@ -275,7 +273,6 @@ nav a:hover {
     50% { transform: translate(20px, -20px) scale(1.05); }
 }
 
-/* BOOKSHELF DECORATION */
 .bookshelf-decoration {
     position: absolute;
     bottom: 20px;
@@ -449,7 +446,6 @@ progress::-webkit-progress-value {
     transform: translateY(0); 
 }
 
-/* Footer Animations */
 footer { 
     text-align: center; 
     padding: 4rem 0; 
