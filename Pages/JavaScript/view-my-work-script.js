@@ -1,11 +1,11 @@
 const achievements = [
     {
         id: 1,
-        title: "Academic Excellance Award",
+        title: "Academic Excellence Award",
         category: "academic",
         icon: "🏅",
         date: "2024",
-        desc: "Awarded for acheveing excellient retult in the examination."
+        desc: "Awarded for achieving excellent results in the examination."
     },
     {
         id: 2,
@@ -18,7 +18,7 @@ const achievements = [
     {
         id: 3,
         title: "Stardance",
-        category: "Projects",
+        category: "projects",
         icon: "🌍",
         date: "2026",
         desc: "Participated in Stardance"
@@ -33,19 +33,19 @@ const achievements = [
     },
     {
         id: 5,
-        title: "Soon",
+        title: "Coming Soon",
         category: "personal",
         icon: "❤️",
-        date: "2???",
-        desc: "Comming Soon."
+        date: "TBA",
+        desc: "Personal milestones and updates arriving soon."
     },
     {
         id: 6,
-        title: "Soon",
+        title: "Coming Soon",
         category: "impacts",
         icon: "🤖",
-        date: "20??",
-        desc: "Comming Soon"
+        date: "TBA",
+        desc: "Impact work and outreach updates arriving soon."
     }
 ];
 
@@ -61,7 +61,7 @@ function renderCards(filter) {
     
     const filteredData = filter === 'all' 
         ? achievements 
-        : achievements.filter(item => item.category === filter);
+        : achievements.filter(item => item.category.toLowerCase() === filter.toLowerCase());
 
     if(filteredData.length === 0) {
         grid.innerHTML = '<p style="color:#666; grid-column: 1/-1; text-align:center;">No items found.</p>';
@@ -76,7 +76,7 @@ function renderCards(filter) {
         card.innerHTML = `
             <div class="card-img">${item.icon}</div>
             <h4>${item.title}</h4>
-            <p>${new Date(item.date).toLocaleDateString(undefined, { month:'short', year:'numeric'})}</p>
+            <p>${formatDate(item.date)}</p>
         `;
         grid.appendChild(card);
     });
@@ -91,14 +91,24 @@ function renderCards(filter) {
     document.getElementById('section-title').innerText = titles[filter] || 'Achievements';
 }
 
-function filterCategory(category) {
+function filterCategory(category, event) {
     currentFilter = category;
     
     document.querySelectorAll('.menu-list li').forEach(li => li.classList.remove('active'));
-    event.currentTarget.classList.add('active');
+    if (event?.currentTarget) {
+        event.currentTarget.classList.add('active');
+    }
 
     renderCards(category);
     hideDetails();
+}
+
+function formatDate(value) {
+    const date = new Date(value);
+    if (Number.isNaN(date.valueOf())) {
+        return value;
+    }
+    return date.toLocaleDateString(undefined, { month:'short', year:'numeric' });
 }
 
 function showDetails(id) {

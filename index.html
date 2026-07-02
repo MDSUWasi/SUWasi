@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Md. Shafi Un Wasi — science portfolio with articles, projects, and research explorations.">
     <title>Wasi@Portfolio</title>
     <link rel="stylesheet" href="my-style.css">
 </head>
@@ -18,28 +19,34 @@
     <header>
         <div class="logo">WASI</div>
         <nav>
-            <a href="Pages/comming-soon.html" class="slide-nav-more">More</a>
-            <a href="Pages/projects-index.html" class="slide-nav-projects">Projects</a>
-            <a href="Pages/contact-index.html" class="btn-primary slide-nav-contact">Contact</a>
+            <a href="Pages/history-timeline-index.html" class="slide-nav-more" aria-label="View timeline">More</a>
+            <a href="Pages/project-index.html" class="slide-nav-projects" aria-label="View projects">Projects</a>
+            <a href="Pages/contact-index.html" class="btn-primary slide-nav-contact" aria-label="Contact me">Contact</a>
         </nav>
     </header>
 
     <main>
         <section id="hero">
             <figure class="avatar-wrapper">
-                <img src="Assets/Images/my profile.jpg" alt="Wasi" class="avatar bounce-avatar">
+                <img src="Assets/Images/my profile.jpg" alt="Wasi" class="avatar bounce-avatar" loading="lazy">
             </figure>
             <div class="hero-content">
                 <h1 class="reveal-text">Hi, I'm Md. Shafi Un Wasi</h1>
                 <h2 class="typewriter-effect">Exploring the Nature Through Equations & Code</h2>
                 <p class="fade-delay">A-Level Science Student | Aspiring Researcher | Computational Explorer</p>
-                <button class="btn-glow scale-hover" onclick="window.location.href='Pages/view-my-work-index.html'">View My Work</button>
-                <button class="btn-glow scale-hover">My Timeline</button>
-                <button class="btn-glow scale-hover" onclick="window.location.href='Pages/about-index.html'">About Me</button>
+                <a href="Pages/view-my-work-index.html" class="btn-glow scale-hover btn-link" data-action="view-work">View My Work</a>
+                <button class="btn-glow scale-hover" data-action="timeline" aria-label="Show upcoming timeline">My Timeline</button>
+                <a href="Pages/about-index.html" class="btn-glow scale-hover btn-link">About Me</a>
             </div>
             <div class="decoration molecule"></div>
             <div class="bookshelf-decoration" aria-hidden="true">
-                <div class="book-spines"></div>
+                <div class="book-spines">
+                    <span class="book-skin"></span>
+                    <span class="book-skin"></span>
+                    <span class="book-skin"></span>
+                    <span class="book-skin"></span>
+                    <span class="book-skin"></span>
+                </div>
             </div>
         </section>
 
@@ -59,27 +66,27 @@
             <div class="card-grid">
                 <article class="card fade-in stagger-card flip-card">
                     <div class="card-img">
-                        <img src="Assets/Images/universe-data-booklet.png" width="100%" height="100%" alt="Universe Data Booklet">
+                        <img src="Assets/Images/universe-data-booklet.png" width="100%" height="100%" alt="Universe Data Booklet" loading="lazy">
                     </div>
                     <h3>Universe Data Booklet</h3>
                     <p>Python based data on exoplanets and asteroids.</p>
-                    <a href="https://wasi100.pythonanywhere.com/" class="btn-secondary"><p align="center">View Project</p></a>
+                    <a href="https://wasi100.pythonanywhere.com/" class="btn-secondary" target="_blank" rel="noopener noreferrer">View Project</a>
                 </article>
                 <article class="card fade-in stagger-card flip-card">
                     <div class="card-img">
-                        <img src="Assets/Images/articles.png" width="100%" height="100%" alt="Articles">
+                        <img src="Assets/Images/articles.png" width="100%" height="100%" alt="Articles" loading="lazy">
                     </div>
                     <h3>Articles</h3>
-                    <p>Already Written many articles</p>
+                    <p>Already written many articles.</p>
                     <a href="Assets/Articles/index.html" class="btn-secondary">View Articles</a>
                 </article>
                 <article class="card fade-in stagger-card flip-card">
                     <div class="card-img">
-                        <img src="Assets/Images/was-cli.png" width="100%" height="100%" alt="WAS-CLI">
+                        <img src="Assets/Images/was-cli.png" width="100%" height="100%" alt="WAS-CLI" loading="lazy">
                     </div>
                     <h3>WAS-CLI</h3>
                     <p>Document time machine</p>
-                    <a href="https://github.com/MDSUWasi/was-cli" class="btn-secondary">View Project Source Code</a>
+                    <a href="https://github.com/MDSUWasi/was-cli" class="btn-secondary" target="_blank" rel="noopener noreferrer">View Project Source Code</a>
                 </article>
             </div>
         </section>

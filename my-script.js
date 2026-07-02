@@ -8,25 +8,17 @@ document.addEventListener('DOMContentLoaded', () => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('visible');
-                     if (entry.target.classList.contains('flip-card')) {
-                    entry.target.style.animation = `fadeInUp ${0.6}s ease forwards`;
-                }
-                
                 observer.unobserve(entry.target);
             }
         });
     }, observerOptions);
 
-    document.querySelectorAll('.fade-in').forEach(element => {
-        observer.observe(element);
-    });
-
-    document.querySelectorAll('.stagger-animate').forEach((element, index) => {
-        setTimeout(() => {
-            element.style.opacity = '1';
-            element.style.transform = 'translateX(0)';
-        }, index * 150);
-    });
+    const fadeElements = document.querySelectorAll('.fade-in');
+    if ('IntersectionObserver' in window) {
+        fadeElements.forEach(element => observer.observe(element));
+    } else {
+        fadeElements.forEach(element => element.classList.add('visible'));
+    }
 
     const heroTitle = document.querySelector('.hero-content h1');
     let ticking = false;
@@ -52,17 +44,12 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    const viewWorkButtons = document.querySelectorAll('.scale-hover');
-    viewWorkButtons.forEach(button => {
-        button.addEventListener('click', function(e) {
-            if (this.textContent.includes('Work') || this.textContent === 'View My Work') {
-                e.preventDefault();
-                document.getElementById('projects').scrollIntoView({ behavior: 'smooth' });
-            } else if (this.textContent === 'My Timeline') {
-                alert('Timeline feature coming soon! This would showcase your academic journey.');
-            }
+    const timelineButton = document.querySelector('[data-action="timeline"]');
+    if (timelineButton) {
+        timelineButton.addEventListener('click', () => {
+            alert('Timeline feature is coming soon. I will add your academic journey here shortly.');
         });
-    });
+    }
 
     const progressBars = document.querySelectorAll('progress');
     progressBars.forEach(progress => {
@@ -112,10 +99,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     document.querySelectorAll('.stagger-card').forEach((card, index) => {
         card.style.setProperty('--order', index + 1);
-        card.style.animation = `cardEntrance 0.8s ease forwards`;
-        card.style.animationDelay = `${index * 0.2}s`;
-        card.style.opacity = '0';
-        card.style.transform = 'translateY(30px) rotateX(10deg)';
     });
 
     const socialLinks = document.querySelectorAll('.hover-icon');
@@ -127,47 +110,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function createRipple(element) {
         const ripple = document.createElement('span');
-        const rect = element.getBoundingClientRect();
         
-        ripple.style.cssText = `
-            position: absolute;
-            background: radial-gradient(circle, rgba(255, 255, 255, 0.6), transparent);
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            transform: translate(-50%, -50%);
-            pointer-events: none;
-            left: 50%;
-            top: 50%;
-            animation: rippleEffect 0.6s ease-out;
-            z-index: 1000;
-        `;
-        
+        ripple.className = 'ripple-effect';
         element.style.position = 'relative';
         element.style.overflow = 'hidden';
         element.appendChild(ripple);
         
         setTimeout(() => ripple.remove(), 600);
     }
-
-    const styleSheet = document.createElement('style');
-    styleSheet.textContent = `
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(30px) rotateX(10deg); }
-            to { opacity: 1; transform: translateY(0) rotateX(0); }
-        }
-        
-        @keyframes cardEntrance {
-            0% { opacity: 0; transform: translateY(30px) rotateX(10deg); }
-            100% { opacity: 1; transform: translateY(0) rotateX(0); }
-        }
-        
-        @keyframes rippleEffect {
-            0% { transform: translate(-50%, -50%) scale(0); opacity: 1; }
-            100% { transform: translate(-50%, -50%) scale(1.5); opacity: 0; }
-        }
-    `;
-    document.head.appendChild(styleSheet);
 
     console.log('📚 Library Theme Portfolio Loaded Successfully!');
 });
