@@ -1,0 +1,35 @@
+:root {
+    --glass-bg: rgba(199, 255, 211, 0.6);
+    --text-main: #0051ff;
+    --accent: #67b698;
+}
+
+.about-container {
+            max-width: 1000px; 
+            margin: 20px auto; 
+            padding: 40px;
+            background: var(--glass-bg); 
+            border: 1px solid var(--glass-border);
+            border-radius: 24px; 
+            backdrop-filter: blur(10px);
+        }
+        .about-header { 
+            text-align: center; 
+            margin-bottom: 40px; 
+        }
+        .about-header h1 { 
+            font-size: 3rem; 
+            color: var(--accent); 
+        }
+        .about-text { 
+            font-size: 1.1rem; 
+            line-height: 1.8; 
+            color: var(--text-main); 
+        }
+        .back-home { 
+            display: inline-block; 
+            margin-top: 30px; color: var(--accent); 
+            text-decoration: none; 
+            font-weight: 700; 
+        }
+    
