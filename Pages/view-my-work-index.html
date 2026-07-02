@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Work | Wasi</title>
+    <link rel="stylesheet" href="CSS/view-my-work-style.css">
+</head>
+<body>
+
+    <header class="top-bar">
+        <nav class="glass-nav">
+            <button class="nav-btn active" onclick="setSection('home')">Home</button>
+            <button class="nav-btn" onclick="setSection('about')">About</button>
+            <div class="spacer"></div>
+            <button class="icon-only"><i class="ph ph-dots-three-vertical"></i></button>
+        </nav>
+    </header>
+
+    <div class="main-container">
+        <aside class="sidebar-left">
+            <ul class="menu-list">
+                <li class="active" onclick="filterCategory('all')"><span><i class="ph ph-squares-four"></i> Dashboard</span></li>
+                <li onclick="filterCategory('academic')"><span><i class="ph ph-graduation-cap"></i> Academic Achievements</span></li>
+                <li onclick="filterCategory('personal')"><span><i class="ph ph-medal"></i> Personal Achievements</span></li>
+                <li onclick="filterCategory('projects')"><span><i class="ph ph-code"></i> Projects</span></li>
+                <li onclick="filterCategory('impacts')"><span><i class="ph ph-globe"></i> Impacts</span></li>
+            </ul>
+            
+            <div class="user-profile-mini">
+                <img src="" alt="Profile" class="avatar">
+                <div class="profile-info">
+                    <strong>Wasi</strong>
+                    <small>Science Student</small>
+                </div>
+            </div>
+        </aside>
+
+        <main class="content-area">
+            <h2 id="section-title">All Achievements</h2>
+            <div class="grid-cards" id="cards-grid">
+
+            </div>
+        </main>
+
+        <aside class="sidebar-right" id="detail-panel">
+            <div class="empty-state" id="empty-state">
+                <i class="ph ph-hand-heart"></i>
+                <p>Select an item to view details</p>
+            </div>
+            
+            <div class="item-details" id="details-content" style="display:none;">
+                <div class="detail-icon-wrapper" id="d-icon"></div>
+                <h3 id="d-title">Title</h3>
+                <span class="tag" id="d-category">Category</span>
+                
+                <div class="date-badge" id="d-date">Date</div>
+                
+                <p class="description" id="d-desc">Description goes here...</p>
+                
+                <div class="actions">
+                    <button class="btn-primary">View Proof</button>
+                    <button class="btn-secondary">Share</button>
+                </div>
+            </div>
+        </aside>
+    </div>
+
+    <script src="JavaScript/view-my-work-script.js"></script>
+</body>
+</html>
