@@ -10,16 +10,16 @@
     <header>
         <div class="logo">WASI</div>
         <nav>
-            <a href="Comming soon">More</a>
-            <a href="HTML/projects-index.html">Projects</a>
-            <a href="HTML/contact-index.html" class="btn-primary">Contact</a>
+            <a href="Pages/comming-soon.html">More</a>
+            <a href="Pages/projects-index.html">Projects</a>
+            <a href="Pages/contact-index.html" class="btn-primary">Contact</a>
         </nav>
     </header>
 
     <main>
         <section id="hero">
             <figure class="avatar-wrapper">
-                <img src="Assets/IMG_20250923_150138.jpg" alt="Wasi" class="avatar">
+                <img src="Assets/Images/my profile.jpg" alt="Wasi" class="avatar">
             </figure>
             <div class="hero-content">
                 <h1>Hi, I'm Md. Shafi Un Wasi</h1>
@@ -27,7 +27,7 @@
                 <p>A-Level Science Student | Aspiring Researcher | Computational Explorer</p>
                 <button class="btn-glow">View My Work</button>
                 <button class="btn-glow">My Timeline</button>
-                <button class="btn-glow">About Me</button>
+                <button class="btn-glow" onclick="window.location.href='Pages/about-index.html'">About Me</button>
             </div>
             <div class="decoration molecule"></div>
         </section>
@@ -47,19 +47,25 @@
             <h2>Selected Projects</h2>
             <div class="card-grid">
                 <article class="card fade-in">
-                    <div class="card-img" style="background: linear-gradient(135deg, #1a1a2e, #16213e);"></div>
+                    <div class="card-img">
+                        <img src="Assets/Images/universe-data-booklet.png" width="100%" height="100%" alt="Universe Data Booklet">
+                    </div>
                     <h3>Universe Data Booklet</h3>
                     <p>Python based data on exoplanets and asteroids.</p>
                     <a href="https://wasi100.pythonanywhere.com/" class="btn-secondary">View Project</a>
                 </article>
                 <article class="card fade-in">
-                    <div class="card-img" style="background: linear-gradient(135deg, #2c003e, #510a32);"></div>
+                    <div class="card-img">
+                        <img src="Assets/Images/articles.png" width="100%" height="100%" alt="Articles">
+                    </div>
                     <h3>Articles</h3>
                     <p>Already Written many articles</p>
                     <a href="Assets/Articles/index.html" class="btn-secondary">View Articles</a>
                 </article>
                 <article class="card fade-in">
-                    <div class="card-img" style="background: linear-gradient(135deg, #0f3460, #533483);"></div>
+                        <div class="card-img">
+                        <img src="Assets/Images/was-cli.png" width="100%" height="100%" alt="WAS-CLI">
+                    </div>
                     <h3>WAS-CLI</h3>
                     <p>Document time machine</p>
                     <a href="https://github.com/MDSUWasi/was-cli" class="btn-secondary">View Project Source Code</a>
