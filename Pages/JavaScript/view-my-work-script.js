@@ -4,12 +4,12 @@ const achievements = [
         title: "Academic Excellence Award",
         category: "academic",
         icon: "🏅",
-        date: "2024",
+        date: "2025",
         desc: "Awarded for achieving excellent results in the examination."
     },
     {
         id: 2,
-        title: "Science Fair Winner",
+        title: "Science Fair",
         category: "projects",
         icon: "🧪",
         date: "2016",
@@ -28,15 +28,15 @@ const achievements = [
         title: "Mathematics",
         category: "academic",
         icon: "📐",
-        date: "Jan 2024",
-        desc: "Mathematics Mathematics"
+        date: "Soon",
+        desc: "Available Soon"
     },
     {
         id: 5,
         title: "Coming Soon",
         category: "personal",
         icon: "❤️",
-        date: "TBA",
+        date: "Soon",
         desc: "Personal milestones and updates arriving soon."
     },
     {
@@ -44,7 +44,7 @@ const achievements = [
         title: "Coming Soon",
         category: "impacts",
         icon: "🤖",
-        date: "TBA",
+        date: "Soon",
         desc: "Impact work and outreach updates arriving soon."
     }
 ];
