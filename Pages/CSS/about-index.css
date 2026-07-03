@@ -1,4 +1,12 @@
-
+:root{
+    --bg-dark: #796de7ce;
+}
+body.unique {
+    background: linear-gradient(135deg, var(--bg-dark), rgb(141, 250, 129));
+    color: var(--text);
+    overflow-x: hidden;
+    min-height: 100vh;
+}
 .about-container {
             max-width: 900px;
             margin: 40px auto;
