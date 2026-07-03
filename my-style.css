@@ -1,7 +1,7 @@
 :root{
     --bg-dark: #796de7ce;
     --primary: #002ff;
-    --accent: #ff2c07;
+    --accent: #796de7ce;
     --text: #ffffff;
     --glass: rgba(240, 166, 166, 0.10);
 }
@@ -210,7 +210,7 @@ progress::-webkit-progress-value {
 }
 
 footer { 
-    text-align: center; 
+    text-align: left; 
     padding: 3rem 0; 
     border-top: 1px solid rgba(255,255,255,0.08); 
     margin-top: auto;
@@ -226,12 +226,12 @@ footer {
     margin: 0 1rem;
     text-decoration: none;
     font-weight: 600;
-    transition: color 0.2s ease, transform 0.2s ease;
+    transition: color 0.01s ease, transform 0.01s ease;
     display: inline-block;
 }
 
 .hover-icon:hover {
-    transform: scale(1.15);
+    transform: scale(1.45);
     color: var(--accent);
 }
 
