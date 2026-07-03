@@ -1,84 +1,100 @@
-:root {
-    --glass-bg: rgba(8, 14, 40, 0.85);
-    --glass-border: rgba(255, 255, 255, 0.14);
-    --text-main: #f8fbff;
-    --text-muted: #b4c3ff;
-    --accent: #002fff;
-    --accent-secondary: #ff2c07;
-}
 
 .about-container {
-    max-width: 1000px;
-    margin: 20px auto;
-    padding: 40px;
-    background: var(--glass-bg);
-    border: 1px solid var(--glass-border);
-    border-radius: 28px;
-    backdrop-filter: blur(16px);
-    box-shadow: 0 28px 70px rgba(0, 0, 0, 0.24);
-}
-.about-header {
-    text-align: center;
-    margin-bottom: 40px;
-}
-.about-header h1 {
-    font-size: 3rem;
-    color: var(--accent);
-    text-shadow: 0 0 18px rgba(0, 47, 255, 0.28);
-}
-.about-header h2 {
-    font-size: 1.1rem;
-    color: var(--text-muted);
-    margin-top: 0.25rem;
-}
-.about-text {
-    font-size: 1.1rem;
-    line-height: 1.8;
-    color: var(--text-main);
-}
-.back-home {
-    display: inline-block;
-    margin-top: 30px;
-    color: #fff;
-    background: linear-gradient(135deg, rgba(0,47,255,0.95), rgba(0,47,255,0.75));
-    padding: 0.85rem 1.5rem;
-    border-radius: 999px;
-    text-decoration: none;
-    font-weight: 700;
-    box-shadow: 0 14px 30px rgba(0, 47, 255, 0.2);
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
-}
-.back-home:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 18px 40px rgba(0, 47, 255, 0.28);
-}
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 20px;
+        }
 
-@media (max-width: 768px) {
-    .about-container {
-        padding: 28px 20px;
-        margin: 16px;
-        border-radius: 22px;
-    }
+.profile-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
 
-    .about-header h1 {
-        font-size: 2.1rem;
-    }
+.profile-name {
+            font-size: 2.5rem;
+            color: var(--text-primary);
+            margin-bottom: 10px;
+        }
 
-    .about-header h2 {
-        font-size: 1rem;
-    }
+.profile-role {
+            font-size: 1.2rem;
+            color: var(--accent-blue);
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
 
-    .about-text {
-        font-size: 1rem;
-    }
+.contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-bottom: 40px;
+        }
 
-    .about-text ul {
-        margin-left: 16px;
-    }
+.contact-card {
+            background: var(--card-bg);
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: var(--shadow-sm);
+            text-align: center;
+            border: 1px solid #ddd;
+        }
 
-    .back-home {
-        width: 100%;
-        text-align: center;
-    }
-}
-    
+.contact-card h4 {
+            margin-bottom: 5px;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+.contact-card a, .contact-card span {
+            color: var(--accent-blue);
+            text-decoration: none;
+            font-weight: bold;
+            word-break: break-all;
+        }
+
+.bio-section {
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: var(--shadow-sm);
+            margin-bottom: 30px;
+            line-height: 1.8;
+            color: var(--text-secondary);
+        }
+
+.bio-section h2 {
+            color: var(--text-primary);
+            margin-bottom: 20px;
+            border-bottom: 2px solid var(--bg-color);
+            padding-bottom: 10px;
+        }
+
+.interests-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+.interest-item {
+            background: var(--bg-color);
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            font-weight: 600;
+            color: var(--text-primary);
+            border: 1px solid #ddd;
+        }
+
+.back-link {
+            display: inline-block;
+            margin-top: 20px;
+            color: var(--accent-blue);
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        @media (max-width: 600px) {
+            .profile-name { font-size: 2rem; }
+            .about-container { padding: 10px; }
+        }
