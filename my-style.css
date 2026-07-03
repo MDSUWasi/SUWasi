@@ -121,20 +121,20 @@ header {
 .section-title {
     font-size: 1.8rem;
     margin-bottom: 2rem;
-    text-align: center;
+    text-align: left;
 }
 
 #skills { 
-    padding: 3rem 10%; 
+    padding: 10rem 10%; 
 }
 
 .skill-grid { 
     max-width: 600px; 
-    margin: 0 auto; 
+    margin: 2; 
 }
 
 .skill-row { 
-    margin-bottom: 1.2rem; 
+    margin-bottom: 0.2rem; 
 }
 
 .skill-row label { 
@@ -182,7 +182,7 @@ progress::-webkit-progress-value {
 }
 
 .card:hover {
-    transform: translateY(-8px);
+    transform: translateY(-80px);
     box-shadow: 0 15px 40px rgba(0,0,0,0.3);
     border-color: rgba(79, 70, 229, 0.4);
 }
