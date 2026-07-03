@@ -2,8 +2,8 @@
     --bg-dark: #796de7ce;
     --bg-main: #090b1f;
     --text-main: #edf2ff;
-    --text-muted: #b9c7ff;
-    --primary: #002fff;
+    --text-muted: #000000;
+    --primary: #002ff;
     --accent: #ff2c07;
     --glass-bg: rgba(255, 255, 255, 0.08);
     --glass-border: rgba(255, 255, 255, 0.12);
@@ -33,7 +33,7 @@ body {
     position: fixed;
     top: 0; width: 100%;
     height: var(--header-height);
-    background: rgba(8, 12, 32, 0.82);
+    background: rgba(3, 44, 250, 0.37);
     backdrop-filter: blur(18px);
     border-bottom: 1px solid rgba(255,255,255,0.08);
     display: flex;
@@ -76,7 +76,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: rgba(8, 12, 32, 0.92);
+    background: #796de7ce;
     animation: fadeIn 0.9s ease-out;
     padding: 20px;
 }
@@ -100,7 +100,7 @@ body {
 }
 
 .glass-btn {
-    background: rgba(0, 47, 255, 0.16);
+    background: rgba(206, 195, 195, 0.493);
     border: 1px solid rgba(255,255,255,0.12);
     color: #fff;
     padding: 15px 40px;
@@ -134,7 +134,7 @@ body {
 }
 
 .article-card {
-    background: rgba(14, 18, 42, 0.95);
+    background: rgba(204, 208, 228, 0.705);
     border: 1px solid rgba(255,255,255,0.1);
     border-radius: 28px;
     padding: 25px;
@@ -149,7 +149,7 @@ body {
 }
 .article-card:hover {
     transform: translateY(-10px) scale(1.01);
-    border-color: rgba(0, 47, 255, 0.35);
+    border-color: rgb(0, 0, 0);
     box-shadow: 0 30px 78px rgba(0,0,0,0.35);
 }
 
@@ -170,7 +170,7 @@ body {
     -webkit-box-orient: vertical;
     overflow: hidden;
     color: #f8fbff;
-    text-shadow: 0 0 20px rgba(0,47,255,0.2);
+    text-shadow: 0 0 20px rgb(0, 42, 224);
 }
 .card-desc { 
     color: var(--text-muted); 

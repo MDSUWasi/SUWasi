@@ -5,7 +5,7 @@ const articlesDB = [
         category: "QUANTUM PHYSICS ",
         date: "May 12, 2026",
         description: "No-Cloning theorem is the natures own copy protection. Quantum states cannot be copied.",
-        file: "Article Content/No-Cloning Theorem.html" 
+        file: "https://mdsuwasi.github.io/Wasi-Discoveries/sites/Articles/articles/No-Cloning%20Theorem.html" 
     },
 
 ];
