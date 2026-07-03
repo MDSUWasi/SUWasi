@@ -1,9 +1,9 @@
 :root {
-    --glass-bg: rgba(8, 14, 40, 0.85);
+    --glass-bg: #796de7ce;;
     --glass-border: rgba(255, 255, 255, 0.14);
     --text-main: #f8fbff;
-    --text-muted: #b4c3ff;
-    --accent: #002fff;
+    --text-muted: #000000;
+    --accent: #000000;
     --accent-secondary: #ff2c07;
 }
 

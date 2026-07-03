@@ -123,7 +123,21 @@ header {
     margin-bottom: 2rem;
     text-align: left;
 }
-
+#portfolio-row {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 40px 20px;
+    flex-wrap: wrap;
+}
+#portfolio-row .card {
+    flex: 1 1 250px;
+    background-color: rgba(30, 30, 30, 0.75);
+    border: 1px solid rgba(225, 225, 225, 0.1);
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.3); 
+}
 #skills { 
     padding: 10rem 10%; 
 }
