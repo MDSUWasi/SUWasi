@@ -130,7 +130,7 @@ header {
     padding: 40px 20px;
     flex-wrap: wrap;
 }
-#portfolio-row .card {
+#portfolio-row .portfoliosection {
     flex: 1 1 250px;
     background-color: rgba(30, 30, 30, 0.75);
     border: 1px solid rgba(225, 225, 225, 0.1);
