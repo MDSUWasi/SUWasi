@@ -132,11 +132,17 @@ header {
 }
 #portfolio-row .portfoliosection {
     flex: 1 1 250px;
-    background-color: rgba(30, 30, 30, 0.75);
+    background-color: transparent;
     border: 1px solid rgba(225, 225, 225, 0.1);
     padding: 30px;
     border-radius: 16px;
     box-shadow: 0 4px 25px rgba(0, 0, 0, 0.3); 
+}
+.card.portfoliosection:hover {
+    animation: none;
+    transform: none;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    background-color: rgba(255, 255, 255, 0.65);
 }
 #skills { 
     padding: 10rem 10%; 
