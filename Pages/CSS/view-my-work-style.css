@@ -12,9 +12,8 @@
 
 body {
     background-color: var(--bg-body);
-    color: #f8fbff;
-    min-height: 100vh;
-    overflow: hidden;
+    height: 100vh;
+    overflow: hidden; 
     display: flex;
     flex-direction: column;
 }
@@ -27,25 +26,22 @@ body {
     align-items: center;
     justify-content: center;
     z-index: 1000;
-    background: rgba(10, 14, 42, 0.72);
-    border-bottom: 1px solid rgba(255,255,255,0.08);
-    backdrop-filter: blur(18px);
 }
 
 .glass-nav {
     width: 90%;
     max-width: 600px;
     height: 50px;
-    background: rgba(10, 14, 42, 0.65);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-    border-radius: 18px;
-    border: 1px solid rgba(255,255,255,0.12);
+    background: var(--glass-bg);
+    backdrop-filter: blur(12px); 
+    -webkit-backdrop-filter: blur(12px);
+    border-radius: 16px;
+    border: 1px solid var(--glass-border);
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 14px;
-    box-shadow: 0 18px 40px rgba(0,0,0,0.22);
+    padding: 0 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
 }
 
 .nav-btn {
@@ -75,14 +71,13 @@ body {
 
 
 .sidebar-left {
-    background: rgba(10, 14, 42, 0.88);
-    border-radius: 24px;
-    padding: 22px;
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+    background: white;
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: var(--card-shadow);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    border: 1px solid rgba(255,255,255,0.1);
 }
 
 .menu-list { list-style: none; }
@@ -98,8 +93,8 @@ body {
     font-size: 0.95rem;
 }
 .menu-list li i { margin-right: 12px; font-size: 1.2rem; }
-.menu-list li:hover { background: rgba(0, 47, 255, 0.12); color: #fff; }
-.menu-list li.active { background: rgba(0, 47, 255, 0.22); color: #fff; font-weight: 700; box-shadow: inset 0 0 0 1px rgba(0, 47, 255, 0.3); }
+.menu-list li:hover { background: #f0f2f5; color: var(--primary); }
+.menu-list li.active { background: #eeebfc; color: var(--primary); font-weight: 600; }
 
 .user-profile-mini {
     display: flex;
@@ -124,17 +119,17 @@ body {
 }
 
 .card {
-    background: rgba(11, 16, 45, 0.92);
-    border-radius: 24px;
-    padding: 24px;
+    background: white;
+    border-radius: 16px;
+    padding: 20px;
     text-align: center;
-    box-shadow: 0 18px 42px rgba(0,0,0,0.28);
+    box-shadow: var(--card-shadow);
     cursor: pointer;
-    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
-    border: 1px solid rgba(255,255,255,0.08);
+    transition: transform 0.2s;
+    border: 1px solid transparent;
 }
 
-.card:hover { transform: translateY(-8px); border-color: rgba(0, 47, 255, 0.35); box-shadow: 0 24px 60px rgba(0,0,0,0.32); }
+.card:hover { transform: translateY(-5px); border-color: #ddd; }
 
 .card-img {
     width: 64px; height: 64px; margin: 0 auto 15px;
@@ -189,103 +184,3 @@ body {
 .btn-secondary:hover { background: #d1d5db; }
 
 @keyframes fadeIn { from { opacity: 0; transform: translateX(10px); } to { opacity: 1; transform: translateX(0); } }
-
-@media (max-width: 960px) {
-    .main-container {
-        grid-template-columns: 1fr;
-        height: auto;
-        margin-top: 100px;
-        padding: 16px;
-    }
-
-    .glass-nav {
-        width: 100%;
-        max-width: none;
-        padding: 14px 16px;
-        justify-content: center;
-        gap: 0.75rem;
-    }
-
-    .nav-btn,
-    .icon-only {
-        font-size: 0.95rem;
-        padding: 10px 14px;
-    }
-
-    .sidebar-left,
-    .sidebar-right {
-        width: 100%;
-    }
-
-    .sidebar-left {
-        padding: 18px;
-    }
-
-    .menu-list {
-        display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 10px;
-    }
-
-    .menu-list li {
-        flex: unset;
-        margin-bottom: 0;
-    }
-
-    .content-area {
-        padding-right: 0;
-    }
-
-    .grid-cards {
-        grid-template-columns: 1fr;
-        gap: 18px;
-    }
-
-    .sidebar-right {
-        margin-top: 20px;
-    }
-}
-
-@media (max-width: 620px) {
-    header {
-        padding: 12px 14px;
-    }
-
-    .glass-nav {
-        flex-direction: column;
-        align-items: stretch;
-    }
-
-    .nav-btn,
-    .icon-only {
-        width: 100%;
-    }
-
-    .sidebar-left {
-        padding: 14px;
-    }
-
-    .user-profile-mini {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 10px;
-    }
-
-    .avatar {
-        width: 42px;
-        height: 42px;
-    }
-
-    .detail-icon-wrapper {
-        font-size: 3rem;
-    }
-
-    .menu-list li {
-        padding: 10px 14px;
-    }
-
-    .btn-primary,
-    .btn-secondary {
-        padding: 12px;
-    }
-}
