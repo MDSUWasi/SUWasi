@@ -9,20 +9,21 @@ const achievements = [
     },
     {
         id: 2,
-        title: "Science Fair",
+        title: "Stardance",
         category: "projects",
-        icon: "🧪",
-        date: "2016",
-        desc: "Worked on effective use of traffic light."
+        icon: "",
+        date: "01 June 2026",
+        desc: "Participated in Stardance"
     },
     {
         id: 3,
-        title: "Stardance",
+        title: "Science ....",
         category: "projects",
-        icon: "🌍",
-        date: "2026",
-        desc: "Participated in Stardance"
+        icon: "🧪",
+        date: "Soon",
+        desc: "Update comming soon"
     },
+
     {
         id: 4,
         title: "Mathematics",
@@ -57,7 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 function renderCards(filter) {
     const grid = document.getElementById('cards-grid');
-    grid.innerHTML = ''; // Clear existing
+    grid.innerHTML = '';
     
     const filteredData = filter === 'all' 
         ? achievements 
@@ -82,7 +83,7 @@ function renderCards(filter) {
     });
 
     const titles = {
-        'all': 'All Achievements',
+        'all': 'All Achievements- Updating Soon',
         'academic': 'Academic Excellence',
         'personal': 'Personal Milestones',
         'projects': 'Tech & Projects',

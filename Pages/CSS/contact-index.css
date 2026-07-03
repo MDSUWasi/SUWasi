@@ -1,12 +1,16 @@
 :root {
-    --glass-bg: #796de7ce;;
+    --glass-bg: #cbc6f3ce;;
+    --bg-dark: #796de7ce;
     --glass-border: rgba(255, 255, 255, 0.14);
     --text-main: #f8fbff;
     --text-muted: #000000;
     --accent: #000000;
     --accent-secondary: #ff2c07;
 }
+body {
+    background: linear-gradient(135deg, var(--bg-dark), rgb(141, 250, 129));
 
+}
 .about-container {
     max-width: 1000px;
     margin: 20px auto;
