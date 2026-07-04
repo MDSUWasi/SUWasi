@@ -12,7 +12,7 @@ The website is static and only written using HTML, CSS and JavaScrtipt. This als
 ## How this source code work.
 ```my-index.html``` is the main html file which holds everything. ```my-style.css``` handles the main user interface. ```Pages``` folder contain the source of sub pages and ```Assets`` Folder have the assets used in this site.
 ## Device/ Screen Requirement
-Using **computer** is recomended. Styling the site for **Phone** is currently under development and will be available soon. So, for now visiting the site on Phone is not recomended.
+Using **computer** is recomended. Styling the site for **Phone** is currently under development and will be available soon. So, for now visiting the site on Phone is not recomended but even if anyone try to use phone then use browser in desktop-mode.
 
 ## Warning
 This source code is specially written for myself. Anyone can review the source code and use this code (program code only). In addtion to it's License, no one is permitted to use any non program data (my description, photos etc.) provided in the source code, those data about myself only belong to me and only me.
