@@ -3,61 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Work | Wasi</title>
+    <title>View My Works and Achievements</title>
     <link rel="stylesheet" href="CSS/view-my-work-style.css">
 </head>
 <body>
-
     <header class="top-bar">
         <nav class="glass-nav">
-            <button class="nav-btn active" onclick="setSection('home')"><a href="../index.html" style="color: rgb(0, 255, 0);">Home</a></button>
-            <button class="nav-btn" onclick="setSection('about')"><a href="../Pages/about-index.html" style="color: rgb(0, 255, 34);">About</a></button>
+            <a href="../index.html" class="nav-btn active" onclick="setSection('home')">Home</a>
+            <a href="../Pages/about-index.html" class="nav-btn" onclick="setSection('about')">About</a>
             <div class="spacer"></div>
-            <button class="icon-only"><i class="ph ph-dots-three-vertical"></i></button>
+            <button class="icon-only" aria-label="More options">⋮</button>
         </nav>
     </header>
 
     <div class="main-container">
         <aside class="sidebar-left">
             <ul class="menu-list">
-                <li class="active" onclick="filterCategory('all', event)"><span><i class="ph ph-squares-four"></i> Dashboard</span></li>
-                <li onclick="filterCategory('academic', event)"><span><i class="ph ph-graduation-cap"></i> Academic Achievements</span></li>
-                <li onclick="filterCategory('personal', event)"><span><i class="ph ph-medal"></i> Personal Achievements</span></li>
-                <li onclick="filterCategory('projects', event)"><span><i class="ph ph-code"></i> Projects</span></li>
-                <li onclick="filterCategory('impacts', event)"><span><i class="ph ph-globe"></i> Impacts</span></li>
+                <li class="active" onclick="filterCategory('all', event)"><span>📚 Dashboard</span></li>
+                <li onclick="filterCategory('academic', event)"><span>🎓 Academic</span></li>
+                <li onclick="filterCategory('personal', event)"><span>❤️ Personal</span></li>
+                <li onclick="filterCategory('projects', event)"><span>💻 Projects</span></li>
+                <li onclick="filterCategory('impacts', event)"><span>🌍 Impact</span></li>
             </ul>
-            
             <div class="user-profile-mini">
-                <img src="../Assets/Images/my profile.jpg" alt="Profile" class="avatar">
+                <div class="avatar"></div>
                 <div class="profile-info">
                     <strong>Md. Shafi Un Wasi</strong>
-                    <small>Science Student</small>
+                    <small>Work Showcase</small>
                 </div>
             </div>
         </aside>
 
         <main class="content-area">
             <h2 id="section-title">All Achievements</h2>
-            <div class="grid-cards" id="cards-grid">
-
-            </div>
+            <div class="grid-cards" id="cards-grid"></div>
         </main>
 
         <aside class="sidebar-right" id="detail-panel">
             <div class="empty-state" id="empty-state">
-                <i class="ph ph-hand-heart"></i>
-                <p>Select one to view details</p>
+                <div class="empty-icon">⭐</div>
+                <p>Select a card to view details</p>
             </div>
-            
             <div class="item-details" id="details-content" style="display:none;">
                 <div class="detail-icon-wrapper" id="d-icon"></div>
                 <h3 id="d-title">Title</h3>
                 <span class="tag" id="d-category">Category</span>
-                
                 <div class="date-badge" id="d-date">Date</div>
-                
                 <p class="description" id="d-desc">Description goes here...</p>
-                
                 <div class="actions">
                     <button class="btn-primary">View Proof</button>
                     <button class="btn-secondary">Share</button>

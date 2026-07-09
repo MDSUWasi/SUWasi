@@ -13,15 +13,15 @@ const achievements = [
         category: "projects",
         icon: "",
         date: "01 June 2026",
-        desc: "Participated in Stardance"
+        desc: "Participated in Stardance."
     },
     {
         id: 3,
-        title: "Science ....",
+        title: "Science Fair",
         category: "projects",
         icon: "🧪",
-        date: "Soon",
-        desc: "Update comming soon"
+        date: "2016",
+        desc: "Participated in science fair at my school."
     },
 
     {

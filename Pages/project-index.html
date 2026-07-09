@@ -3,51 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projects | Wasi</title>
-    <style>
-        body {
-            margin: 0;
-            font-family: Inter, sans-serif;
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: radial-gradient(circle at top, #0b1223, #133f8c);
-            color: #fff;
-        }
-        .page-shell {
-            width: min(95%, 720px);
-            padding: 2rem;
-            text-align: center;
-            backdrop-filter: blur(16px);
-            background: rgba(8, 12, 40, 0.94);
-            border: 1px solid rgba(255, 255, 255, 0.12);
-            border-radius: 28px;
-            box-shadow: 0 30px 90px rgba(0, 0, 0, 0.32);
-        }
-        h1 { font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 1rem; color: #dce5ff; text-shadow: 0 0 18px rgba(0,47,255,0.25); }
-        p { color: #cbd5e1; line-height: 1.8; margin-bottom: 1.75rem; }
-        a {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.5rem;
-            padding: 0.85rem 1.4rem;
-            background: #ff2c07;
-            color: #fff;
-            border-radius: 999px;
-            text-decoration: none;
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-            box-shadow: 0 12px 30px rgba(255, 44, 7, 0.25);
-        }
-        a:hover { transform: translateY(-2px); box-shadow: 0 18px 38px rgba(255, 44, 7, 0.35); }
-    </style>
+    <title>View My Projects</title>
+    <link rel="stylesheet" href="CSS/project-index.css">
 </head>
 <body>
-    <div class="page-shell">
-        <h1>Projects Page Coming Soon</h1>
-        <p>I am building this page to highlight your best work in a fast and polished layout with clear project details.</p>
-        <a href="../index.html">Return Home</a>
-    </div>
+    <main class="page-shell">
+        <header class="page-hero">
+            <p class="eyebrow">Projects</p>
+            <h1>Latest work and code</h1>
+            <p class="hero-copy">Explore my science and programming projects, from data tools to experiment showcases and portfolio utilities.</p>
+        </header>
+
+        <section class="project-grid">
+            <article class="project-card">
+                <span class="project-tag">Web App</span>
+                <h2>Universe Data Booklet</h2>
+                <p>A Python web app that shares data about exoplanets and astronomy research.</p>
+                <a href="https://wasi100.pythonanywhere.com/" target="_blank">View Project</a>
+            </article>
+            <article class="project-card">
+                <span class="project-tag">CLI Tool</span>
+                <h2>WAS-CLI</h2>
+                <p>Document management utility designed to help save, search and organize notes from the terminal.</p>
+                <a href="https://github.com/MDSUWasi/was-cli" target="_blank">View Source</a>
+            </article>
+            <article class="project-card">
+                <span class="project-tag">Research</span>
+                <h2>A-Level Science Notes</h2>
+                <p>Curated notes, diagrams, and examples for physics, chemistry, and mathematics learning.</p>
+                <a href="../Pages/about-index.html">Read More</a>
+            </article>
+            <article class="project-card">
+                <span class="project-tag">Coming Soon</span>
+                <h2>Interactive Data Toolkit</h2>
+                <p>New science tool under development — coming soon with experiments, charts and simulations.</p>
+                <a href="../Pages/contact-index.html">Stay Updated</a>
+            </article>
+        </section>
+
+        <a class="primary-button" href="../index.html">← Return Home</a>
+    </main>
 </body>
 </html>
