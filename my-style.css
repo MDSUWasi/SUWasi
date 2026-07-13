@@ -84,7 +84,7 @@ button {
     justify-content: space-between;
     gap: 1rem;
     padding: 1rem 5%;
-    background: rgba(26, 26, 46, 0.82);
+    background: #796de718;
     backdrop-filter: blur(12px);
     border-bottom: 1px solid rgba(255,255,255,0.1);
 }
