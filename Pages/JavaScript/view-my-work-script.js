@@ -4,7 +4,7 @@ const achievements = [
         title: "Academic Excellence Award",
         category: "academic",
         icon: "🏅",
-        date: "2025",
+        date: "August 2025",
         desc: "Awarded for achieving excellent results in the examination."
     },
     {
