@@ -18,6 +18,12 @@ Using **computer** is recomended for best performance. This site can be viewed o
 This source code is specially written for myself. Anyone can review the source code and use this code (program code only). In addtion to it's License, no one is permitted to use any non program data (my description, photos etc.) provided in the source code, those data about myself only belong to me and only me.
         
 ## Contribution
-Since this is my personal website, I would like to updete/ upgrade and change all by myself. But if anyone like the source code they can use it under **MIT License.**
+Since this is my personal website, I would like to updete/ upgrade and change all by myself. But if anyone like the source code they can use it under **it's License.**
+
+## License
+Copyright (c) 2026 Md. Shafi Un Wasi
+This program is free software: you can redistribute it and/or modifyit under the terms of the GNU General Public License as published by the Free Software Doundation, either version 3 of the license, or any later version.
+
+This project's source code is licensed under the **GNU General Public License v3.0**
 
 # Built for Myself. 
