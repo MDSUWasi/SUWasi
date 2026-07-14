@@ -15,6 +15,11 @@ The website is static and only written using HTML, CSS and JavaScrtipt. This als
 Using **computer** is recomended for best performance. This site can be viewed on Phone too.
 
 ## Warning
+
+```
+This site uses analytics tool. The analytics tool used here from Umami. I used Umami because it is privacy-first analytics tool.
+```
+
 This source code is specially written for myself. Anyone can review the source code and use this code (program code only). In addtion to it's License, no one is permitted to use any non program data (my description, photos etc.) provided in the source code, those data about myself only belong to me and only me.
         
 ## Contribution
