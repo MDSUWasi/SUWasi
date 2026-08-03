@@ -8,91 +8,167 @@
     <link rel="stylesheet" href="CSS/history-timeline-index.css">
 </head>
 <body>
+    <div class="scroll-progress" id="scrollProgress"></div>
+
     <main class="timeline-shell">
         <header class="page-hero">
             <p class="eyebrow">Timeline</p>
             <h1>My Journey</h1>
-            <p class="hero-copy">A visual story of my time flow.</p>
+            <p class="hero-copy">A visual story of my time flow — from first steps to quantum frontiers.</p>
         </header>
 
-        <section class="timeline-container">
-            <div class="timeline-line"></div>
-            <div class="timeline-progress" id="progress"></div>
+        <section class="timeline-container" id="timelineContainer">
+            <svg class="timeline-svg" id="timelineSvg" preserveAspectRatio="none" viewBox="0 0 100 100">
+                <defs>
+                    <linearGradient id="pathGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                        <stop offset="0%"  stop-color="#fbbf24"/>
+                        <stop offset="20%" stop-color="#22d3ee"/>
+                        <stop offset="45%" stop-color="#7c3aed"/>
+                        <stop offset="70%" stop-color="#3b82f6"/>
+                        <stop offset="100%" stop-color="#fbbf24"/>
+                    </linearGradient>
+                </defs>
+                <path id="timelinePath"
+                      d=""
+                      fill="none"
+                      stroke="url(#pathGradient)"
+                      stroke-width="0.4"
+                      stroke-dasharray="1.2 1.2"
+                      stroke-linecap="round"
+                      opacity="0.7"/>
+                <path id="timelinePathProgress"
+                      d=""
+                      fill="none"
+                      stroke="url(#pathGradient)"
+                      stroke-width="0.6"
+                      stroke-linecap="round"
+                      opacity="0"/>
+            </svg>
 
-            <article class="timeline-item">
-                <div class="timeline-content">
-                    <span class="timeline-date">2009</span>
-                    <h2 class="timeline-title">Started Life</h2>
-                    <p class="timeline-desc">Landed on Earth.</p>
-                </div>
+            <article class="timeline-item" data-era="childhood" data-side="left">
                 <div class="timeline-point"></div>
+                <div class="timeline-card">
+                    <div class="timeline-image">
+                        <img src="Assets/Images/timeline-2009.jpg" alt="Started Life" loading="lazy"
+                             onerror="this.parentElement.style.display='none'">
+                    </div>
+                    <div class="timeline-body">
+                        <span class="timeline-date">2009</span>
+                        <h2 class="timeline-title">Started Life</h2>
+                        <p class="timeline-desc">Landed on Earth.</p>
+                    </div>
+                </div>
             </article>
 
-            <article class="timeline-item">
-                <div class="timeline-content">
-                    <span class="timeline-date">2014</span>
-                    <h2 class="timeline-title">First Computer and First School</h2>
-                    <p class="timeline-desc">This year I first touched a desktop in my house (I useally played games on that computer that time) and this is the year I got addmitted to class KG of my School</p>
-                </div>
+            <article class="timeline-item" data-era="discovery" data-side="right">
                 <div class="timeline-point"></div>
-            </article>
-            <article class="timeline-item">
-                <div class="timeline-content">
-                    <span class="timeline-date">2016</span>
-                    <h2 class="timeline-title">First Science Fair</h2>
-                    <p class="timeline-desc">This year I first attended a science fair. My project was on how traffic light solves the traffic problem in a busy road.</p>
+                <div class="timeline-card">
+                    <div class="timeline-image">
+                        <img src="Assets/Images/timeline-2014.jpg" alt="First Computer" loading="lazy"
+                             onerror="this.parentElement.style.display='none'">
+                    </div>
+                    <div class="timeline-body">
+                        <span class="timeline-date">2014</span>
+                        <h2 class="timeline-title">First Computer & First School</h2>
+                        <p class="timeline-desc">This year I first touched a desktop in my house (I usually played games on that computer at that time) and this is the year I got admitted to class KG of my school.</p>
+                    </div>
                 </div>
-                <div class="timeline-point"></div>
             </article>
 
-            <article class="timeline-item">
-                <div class="timeline-content">
-                    <span class="timeline-date">2020–2022</span>
-                    <h2 class="timeline-title">COVID Lockdown</h2>
-                    <p class="timeline-desc">During lockdown, that old PC, got broken. During that time I learned how to fix the broken PC by watching tutorials. And I successfully fixed the PC. This was the first time when I got my first spark of interest in computer. After that I intentionally break by PC and rebuild it.</p>
-                </div>
+            <article class="timeline-item" data-era="discovery" data-side="left">
                 <div class="timeline-point"></div>
+                <div class="timeline-card">
+                    <div class="timeline-image">
+                        <img src="Assets/Images/timeline-2016.jpg" alt="Science Fair" loading="lazy"
+                             onerror="this.parentElement.style.display='none'">
+                    </div>
+                    <div class="timeline-body">
+                        <span class="timeline-date">2016</span>
+                        <h2 class="timeline-title">First Science Fair</h2>
+                        <p class="timeline-desc">This year I first attended a science fair. My project was on how traffic lights solve the traffic problem on a busy road.</p>
+                    </div>
+                </div>
             </article>
 
-            <article class="timeline-item">
-                <div class="timeline-content">
-                    <span class="timeline-date">2022</span>
-                    <h2 class="timeline-title">Science Group</h2>
-                    <p class="timeline-desc">This year I choose science group to continue my studies and narrowed down by interent and future path.</p>
-                </div>
+            <article class="timeline-item" data-era="growth" data-side="right">
                 <div class="timeline-point"></div>
+                <div class="timeline-card">
+                    <div class="timeline-image">
+                        <img src="Assets/Images/timeline-2020.jpg" alt="COVID Lockdown" loading="lazy"
+                             onerror="this.parentElement.style.display='none'">
+                    </div>
+                    <div class="timeline-body">
+                        <span class="timeline-date">2020 – 2022</span>
+                        <h2 class="timeline-title">COVID Lockdown</h2>
+                        <p class="timeline-desc">During lockdown, that old PC got broken. I learned how to fix it by watching tutorials and successfully repaired it. This was the first spark of my interest in computers. After that, I intentionally broke my PC and rebuilt it.</p>
+                    </div>
+                </div>
             </article>
 
-            <article class="timeline-item">
-                <div class="timeline-content">
-                    <span class="timeline-date">2025</span>
-                    <h2 class="timeline-title">SSC Exam</h2>
-                    <p class="timeline-desc">I completed the SSC exam with GPA 5.00 score.</p>
-                </div>
+            <article class="timeline-item" data-era="science" data-side="left">
                 <div class="timeline-point"></div>
+                <div class="timeline-card">
+                    <div class="timeline-image">
+                        <img src="Assets/Images/timeline-2022.jpg" alt="Science Group" loading="lazy"
+                             onerror="this.parentElement.style.display='none'">
+                    </div>
+                    <div class="timeline-body">
+                        <span class="timeline-date">2022</span>
+                        <h2 class="timeline-title">Science Group</h2>
+                        <p class="timeline-desc">This year I chose the science group to continue my studies and narrowed down my interests and future path.</p>
+                    </div>
+                </div>
             </article>
 
-            <article class="timeline-item">
-                <div class="timeline-content">
-                    <span class="timeline-date">2025</span>
-                    <h2 class="timeline-title">Coral Island Trip</h2>
-                    <p class="timeline-desc">My first visit to a Island of my country.</p>
-                </div>
+            <article class="timeline-item" data-era="science" data-side="right">
                 <div class="timeline-point"></div>
+                <div class="timeline-card">
+                    <div class="timeline-image">
+                        <img src="Assets/Images/timeline-2025-ssc.jpg" alt="SSC Exam" loading="lazy"
+                             onerror="this.parentElement.style.display='none'">
+                    </div>
+                    <div class="timeline-body">
+                        <span class="timeline-date">2025</span>
+                        <h2 class="timeline-title">SSC Exam</h2>
+                        <p class="timeline-desc">I completed the SSC exam with a GPA 5.00 score.</p>
+                    </div>
+                </div>
             </article>
 
-            <article class="timeline-item">
-                <div class="timeline-content">
-                    <span class="timeline-date">2026</span>
-                    <h2 class="timeline-title">A-Levels Focus</h2>
-                    <p class="timeline-desc">I chose A-Level science to concentrate on Physics, Mathematics, and the research projects that inspire me most.</p>
-                </div>
+            <article class="timeline-item" data-era="science" data-side="left">
                 <div class="timeline-point"></div>
+                <div class="timeline-card">
+                    <div class="timeline-image">
+                        <img src="Assets/Images/timeline-2025-island.jpg" alt="Coral Island Trip" loading="lazy"
+                             onerror="this.parentElement.style.display='none'">
+                    </div>
+                    <div class="timeline-body">
+                        <span class="timeline-date">2025</span>
+                        <h2 class="timeline-title">Coral Island Trip</h2>
+                        <p class="timeline-desc">My first visit to an island of my country.</p>
+                    </div>
+                </div>
+            </article>
+
+            <article class="timeline-item" data-era="future" data-side="right">
+                <div class="timeline-point"></div>
+                <div class="timeline-card">
+                    <div class="timeline-image">
+                        <img src="Assets/Images/timeline-2026.jpg" alt="A-Levels Focus" loading="lazy"
+                             onerror="this.parentElement.style.display='none'">
+                    </div>
+                    <div class="timeline-body">
+                        <span class="timeline-date">2026</span>
+                        <h2 class="timeline-title">A-Levels Focus</h2>
+                        <p class="timeline-desc">I chose A-Level science to concentrate on Physics, Mathematics, and the research projects that inspire me most.</p>
+                    </div>
+                </div>
             </article>
         </section>
 
         <a class="primary-button" href="../index.html">← Back to Home</a>
     </main>
+
     <script src="JavaScript/history-timeline.js"></script>
 </body>
 </html>
