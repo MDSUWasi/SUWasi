@@ -7,6 +7,7 @@
     const timelinePath = document.getElementById('timelinePath');
     const timelinePathProgress = document.getElementById('timelinePathProgress');
     const container = document.getElementById('timelineContainer');
+
     function buildCurvedPath() {
         if (window.innerWidth <= 768) return;
 
@@ -14,21 +15,19 @@
         const w = containerRect.width;
         const h = containerRect.height;
 
-        // Collect anchor points (center of each timeline-point marker)
         const points = [];
         items.forEach(item => {
             const point = item.querySelector('.timeline-point');
             const pointRect = point.getBoundingClientRect();
-            const containerTop = containerRect.top + window.scrollY;
-            const itemTop = pointRect.top + window.scrollY;
 
             const px = pointRect.left + pointRect.width / 2 - containerRect.left;
-            const py = itemTop - (containerRect.top + window.scrollY);
+            const py = pointRect.top + pointRect.height / 2 - containerRect.top;
 
             points.push({ x: px, y: py });
         });
 
         if (points.length < 2) return;
+
         const svgW = 100;
         const svgH = 100;
         const scaleX = svgW / w;
@@ -66,14 +65,13 @@
         const docHeight = document.documentElement.scrollHeight - window.innerHeight;
         const pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
         progress.style.width = pct + '%';
+
         if (window.innerWidth > 768 && timelinePathProgress.getAttribute('d')) {
             const totalLength = timelinePathProgress.getTotalLength();
             const containerRect = container.getBoundingClientRect();
             const viewportCenter = window.innerHeight * 0.5;
-            const containerTop = containerRect.top;
-            const containerBottom = containerRect.bottom;
-            const visibleRange = viewportCenter - containerTop;
-            const totalRange = containerBottom - containerTop;
+            const visibleRange = viewportCenter - containerRect.top;
+            const totalRange = containerRect.bottom - containerRect.top;
 
             let progressFraction = 0;
             if (visibleRange > 0 && totalRange > 0) {
@@ -83,6 +81,7 @@
             timelinePathProgress.style.strokeDashoffset = totalLength * (1 - progressFraction);
         }
     }
+
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -96,6 +95,7 @@
     });
 
     items.forEach(item => observer.observe(item));
+
     requestAnimationFrame(() => {
         setTimeout(buildCurvedPath, 100);
     });
@@ -103,7 +103,8 @@
     window.addEventListener('scroll', updateScrollProgress, { passive: true });
     window.addEventListener('resize', () => {
         clearTimeout(window._timelineResizeTimer);
-        window._timelineResizeTimer = setTimeout(buildCurvedPath, 200);
+        window._timelineResizeTimer = setTimeout(buildCurvedPath, 150);
     });
+
     updateScrollProgress();
 })();

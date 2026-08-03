@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
     <script defer src="https://cloud.umami.is/script.js" data-website-id="ddd814d8-a013-4739-82ca-ea23c8674274"></script>
     <meta property="og:type" content="website">
@@ -15,19 +15,35 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Md. Shafi Un Wasi ">
+    <meta name="description" content="Md. Shafi Un Wasi - A-Level science student passionate about physics, mathematics, chemistry, and coding.">
+    <meta name="author" content="Md. Shafi Un Wasi">
+    <meta name="theme-color" content="#796de7">
+
+    <link rel="icon" type="image/x-icon" href="Assets/favicon.ico">
+    <link rel="apple-touch-icon" href="Assets/apple-touch-icon.png">
+    <link rel="manifest" href="manifest.json">
+
     <title>Wasi's Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="my-style.css">
 </head>
 <body class="library-theme">
     <header class="site-header">
         <a href="index.html" class="logo">WASI</a>
-        <button class="hamburger" type="button" aria-label="Open menu" aria-expanded="false">
-            <span class="hamburger-line"></span>
-            <span class="hamburger-line"></span>
-            <span class="hamburger-line"></span>
-        </button>
-        <nav class="nav-links" aria-label="Primary navigation">
+        <div class="header-controls">
+            <button class="theme-toggle" type="button" aria-label="Toggle dark mode" id="themeToggle">
+                <span class="theme-icon-light">☀️</span>
+                <span class="theme-icon-dark">🌙</span>
+            </button>
+            <button class="hamburger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="primary-nav">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+        </div>
+        <nav class="nav-links" id="primary-nav" aria-label="Primary navigation">
             <a href="index.html" class="nav-link">Home</a>
             <a href="Pages/project-index.html" class="nav-link">Projects</a>
             <a href="Pages/history-timeline-index.html" class="nav-link">Timeline</a>
@@ -41,7 +57,7 @@
             <div class="hero-left reveal delay-2">
                 <div class="avatar-card">
                     <div class="avatar-frame">
-                        <img src="Assets/Images/my profile.jpg" alt="Portrait of Wasi" class="avatar" loading="lazy">
+                        <img src="Assets/Images/my profile.jpg" alt="Portrait of Md. Shafi Un Wasi" class="avatar" loading="eager" fetchpriority="high">
                     </div>
                     <div class="avatar-labels">
                         <span>Science</span>
@@ -111,33 +127,32 @@
                 </article>
             </div>
         </section>
-<br><br>
+
         <section id="current" class="panel reveal delay-5">
-            <h2 class="section-title">Currently Present At</h2>
+            <h2 class="section-title">Currently Working On</h2>
             <div class="panel-grid single-column">
                 <article class="card">
                     <div class="card-img">
-                        <img src="Assets/Images/was-assistant.png" alt="Was-Assistant" loading="lazy">
+                        <img src="Assets/Images/was-assistant.png" alt="WAS-Assistant" loading="lazy">
                     </div>
                     <h3>WAS-Assistant</h3>
-                    <p>An assistant that directly works from computer. I am currently working on this belongs to one of many features in my Was-Ecosytem.</p>
-                    <a href="Undate comming soon" class="btn-secondary" target="_blank" rel="noopener noreferrer">View Project Source Code</a>
+                    <p>An assistant that directly works from your computer. Currently under development as part of the WAS-Ecosystem.</p>
+                    <a href="#" class="btn-secondary" aria-disabled="true">Update Coming Soon</a>
                 </article>
             </div>
         </section>
     </main>
-<br><br><br><br>
+
     <footer id="contact" class="footer-panel reveal delay-6">
         <div class="footer-copy">
             <h3>More From Me</h3>
-            <p>This site will get a major update on 10 August will a lot of new things.</p>
+            <p>This site will get a major update on 10 August with a lot of new things.</p>
         </div>
         <div class="socials">
-            <span class="hover-icon">This section will be available from 10 August</span>
-            <span class="hover-icon">This Section will be available from 10 August</span>
-            <span class="hover-icon">This Section will be available from 10 August</span>
-            <span class="hover-icon">This Section will be available from 10 August</span>
-            <span class="hover-icon">This Section will be available from 10 August</span>
+            <a href="https://github.com/MDSUWasi" class="hover-icon" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <a href="https://www.linkedin.com/in/md-shafi-un-wasi" class="hover-icon" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <a href="https://bsky.app/profile/shafi-un-wasi.bsky.social" class="hover-icon" target="_blank" rel="noopener noreferrer">Bluesky</a>
+            <a href="mailto:shafiun.wasi@outlook.com" class="hover-icon">Email</a>
         </div>
     </footer>
 

@@ -11,7 +11,7 @@ const achievements = [
         id: 2,
         title: "Stardance",
         category: "projects",
-        icon: "",
+        icon: "✨",
         date: "01 June 2026",
         desc: "Participated in Stardance."
     },
@@ -21,16 +21,15 @@ const achievements = [
         category: "projects",
         icon: "🧪",
         date: "2016",
-        desc: "Participated in science fair at my school."
+        desc: "Participated in a science fair at my school."
     },
-
     {
         id: 4,
         title: "Mathematics",
         category: "academic",
         icon: "📐",
         date: "Soon",
-        desc: "Available Soon"
+        desc: "Available soon."
     },
     {
         id: 5,
@@ -59,12 +58,12 @@ document.addEventListener('DOMContentLoaded', () => {
 function renderCards(filter) {
     const grid = document.getElementById('cards-grid');
     grid.innerHTML = '';
-    
-    const filteredData = filter === 'all' 
-        ? achievements 
+
+    const filteredData = filter === 'all'
+        ? achievements
         : achievements.filter(item => item.category.toLowerCase() === filter.toLowerCase());
 
-    if(filteredData.length === 0) {
+    if (filteredData.length === 0) {
         grid.innerHTML = '<p style="color:#666; grid-column: 1/-1; text-align:center;">No items found.</p>';
         return;
     }
@@ -73,7 +72,6 @@ function renderCards(filter) {
         const card = document.createElement('div');
         card.className = 'card';
         card.onclick = () => showDetails(item.id);
-        
         card.innerHTML = `
             <div class="card-img">${item.icon}</div>
             <h4>${item.title}</h4>
@@ -83,7 +81,7 @@ function renderCards(filter) {
     });
 
     const titles = {
-        'all': 'All Achievements- Updating Soon',
+        'all': 'All Achievements — Updating Soon',
         'academic': 'Academic Excellence',
         'personal': 'Personal Milestones',
         'projects': 'Tech & Projects',
@@ -94,12 +92,10 @@ function renderCards(filter) {
 
 function filterCategory(category, event) {
     currentFilter = category;
-    
     document.querySelectorAll('.menu-list li').forEach(li => li.classList.remove('active'));
-    if (event?.currentTarget) {
+    if (event && event.currentTarget) {
         event.currentTarget.classList.add('active');
     }
-
     renderCards(category);
     hideDetails();
 }
@@ -109,18 +105,15 @@ function formatDate(value) {
     if (Number.isNaN(date.valueOf())) {
         return value;
     }
-    return date.toLocaleDateString(undefined, { month:'short', year:'numeric' });
+    return date.toLocaleDateString(undefined, { month: 'short', year: 'numeric' });
 }
 
 function showDetails(id) {
     const item = achievements.find(a => a.id === id);
     if (!item) return;
 
-    const emptyState = document.getElementById('empty-state');
-    const detailsPanel = document.getElementById('details-content');
-
-    emptyState.style.display = 'none';
-    detailsPanel.style.display = 'block';
+    document.getElementById('empty-state').style.display = 'none';
+    document.getElementById('details-content').style.display = 'block';
 
     document.getElementById('d-icon').innerHTML = `<span style="font-size:4rem">${item.icon}</span>`;
     document.getElementById('d-title').innerText = item.title;
@@ -135,9 +128,8 @@ function hideDetails() {
 }
 
 function setSection(section) {
-    console.log("Navigating to:", section);
     const navBtns = document.querySelectorAll('.nav-btn');
     navBtns.forEach(btn => btn.classList.remove('active'));
-    if(section === 'home') navBtns[0].classList.add('active');
-    if(section === 'about') navBtns[1].classList.add('active');
+    if (section === 'home') navBtns[0].classList.add('active');
+    if (section === 'about') navBtns[1].classList.add('active');
 }
