@@ -588,6 +588,12 @@ button {
     margin: 1rem 0;
 }
 
+.credential-card > div[data-share-badge-id] {
+    display: flex;
+    justify-content: center;
+    margin: 1rem 0;
+}
+
 .credential-card .btn-secondary {
     margin-top: 0.8rem;
 }
