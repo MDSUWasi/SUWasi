@@ -1,2 +1,39 @@
+# Robots.txt for SUWasi Portfolio
+# https://mdsuwasi.github.io/SUWasi/
+
+# Allow all search engines to crawl everything
 User-agent: *
 Allow: /
+
+# Block 404 page from indexing (prevents duplicate content penalties)
+Disallow: /*404*
+
+# Block raw image files from appearing in image search (keep them embedded only)
+Disallow: /Assets/Images/*.jpg$
+Disallow: /Assets/Images/*.jpeg$
+Disallow: /Assets/Images/*.png$
+
+# Sitemap location
+Sitemap: https://mdsuwasi.github.io/SUWasi/sitemap.xml
+
+# Search Engine-Specific Guidelines
+# ---------------------------------
+
+# Google Bots
+User-agent: Googlebot
+Allow: /
+
+# Bing Search
+User-agent: Bingbot
+Allow: /
+
+# DuckDuckGo
+User-agent: DuckDuckBot
+Allow: /
+
+# Academic crawlers
+User-agent: CCBot
+Allow: /
+
+# Host information
+Host: https://mdsuwasi.github.io/SUWasi/
