@@ -35,6 +35,7 @@ html {
 }
 
 body {
+    position: relative;
     margin: 0;
     min-height: 100vh;
     overflow-x: hidden;
@@ -43,6 +44,33 @@ body {
     font-family: 'Inter', sans-serif;
     line-height: 1.5;
     transition: background var(--transition);
+    isolation: isolate;
+}
+
+body::before,
+body::after {
+    content: "";
+    position: fixed;
+    inset: auto;
+    width: 28rem;
+    height: 28rem;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.32;
+    z-index: -1;
+    pointer-events: none;
+}
+
+body::before {
+    top: -7rem;
+    right: -4rem;
+    background: rgba(168, 85, 247, 0.6);
+}
+
+body::after {
+    bottom: -9rem;
+    left: -4rem;
+    background: rgba(34, 211, 238, 0.35);
 }
 
 main {
@@ -427,12 +455,12 @@ button {
     margin: 1.5rem auto;
     padding: 3rem 5%;
     max-width: 1200px;
-    background: var(--glass);
+    background: linear-gradient(180deg, rgba(255,255,255,0.10), rgba(255,255,255,0.04));
     border: 1px solid var(--glass-border);
     border-radius: var(--panel-radius);
-    box-shadow: 0 20px 80px rgba(0, 0, 0, 0.12);
-    backdrop-filter: blur(18px);
-    -webkit-backdrop-filter: blur(18px);
+    box-shadow: 0 24px 80px rgba(13, 18, 38, 0.22), inset 0 1px 0 rgba(255,255,255,0.14);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
 }
 
 .panel-grid {
@@ -447,12 +475,14 @@ button {
 
 .panel-card,
 .card {
-    background: var(--panel-bg);
-    border: 1px solid var(--glass-border);
+    background: linear-gradient(180deg, rgba(17, 24, 39, 0.72), rgba(17, 24, 39, 0.48));
+    border: 1px solid rgba(255, 255, 255, 0.12);
     border-radius: var(--card-radius);
     padding: 1.7rem;
-    box-shadow: 0 18px 48px rgba(0, 0, 0, 0.16);
-    transition: transform var(--transition), border-color var(--transition), box-shadow var(--transition);
+    box-shadow: 0 18px 48px rgba(0, 0, 0, 0.16), inset 0 1px 0 rgba(255,255,255,0.06);
+    transition: transform var(--transition), border-color var(--transition), box-shadow var(--transition), backdrop-filter var(--transition);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
 }
 
 .panel-card:hover,
@@ -493,7 +523,8 @@ button {
     overflow: hidden;
     border-radius: 18px;
     margin-bottom: 1rem;
-    background: linear-gradient(180deg, rgba(79, 70, 229, 0.22), transparent);
+    background: linear-gradient(180deg, rgba(79, 70, 229, 0.28), rgba(255,255,255,0.06));
+    border: 1px solid rgba(255,255,255,0.08);
 }
 
 .card-img img {
@@ -562,6 +593,51 @@ button {
     display: block;
 }
 
+.placeholder-stat-card {
+    min-height: 220px;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px dashed rgba(255, 255, 255, 0.24);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.placeholder-stat-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 0.5rem;
+    width: 100%;
+    min-height: 180px;
+    padding: 1rem;
+    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.02);
+    color: var(--text-muted);
+}
+
+.placeholder-stat-label {
+    display: inline-flex;
+    padding: 0.4rem 0.75rem;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-faint);
+}
+
+.placeholder-stat-content strong {
+    font-size: 1.2rem;
+    color: var(--text);
+}
+
+.placeholder-stat-content small {
+    font-size: 0.8rem;
+    color: var(--text-faint);
+}
+
 .analytics-card {
     background: var(--panel-bg);
     border: 1px solid var(--glass-border);
@@ -606,10 +682,10 @@ button {
     align-items: center;
     justify-content: space-between;
     gap: 1.5rem;
-    background: var(--glass);
+    background: linear-gradient(180deg, rgba(255,255,255,0.10), rgba(255,255,255,0.04));
     border: 1px solid var(--glass-border);
     border-radius: var(--panel-radius);
-    box-shadow: 0 20px 80px rgba(0, 0, 0, 0.12);
+    box-shadow: 0 20px 80px rgba(0, 0, 0, 0.12), inset 0 1px 0 rgba(255,255,255,0.12);
     backdrop-filter: blur(18px);
     -webkit-backdrop-filter: blur(18px);
 }

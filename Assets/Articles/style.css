@@ -14,6 +14,7 @@
 }
 
 body {
+    position: relative;
     margin: 0;
     padding-top: var(--header-height);
     min-height: 100vh;
@@ -22,7 +23,32 @@ body {
     font-family: 'Inter', sans-serif;
     overflow-x: hidden;
     transition: background-color 0.4s ease, transform 0.4s ease;
-    position: relative;
+    isolation: isolate;
+}
+
+body::before,
+body::after {
+    content: "";
+    position: fixed;
+    width: 24rem;
+    height: 24rem;
+    border-radius: 50%;
+    filter: blur(90px);
+    opacity: 0.22;
+    z-index: -1;
+    pointer-events: none;
+}
+
+body::before {
+    top: -6rem;
+    right: -5rem;
+    background: rgba(167, 139, 250, 0.7);
+}
+
+body::after {
+    bottom: -8rem;
+    left: -5rem;
+    background: rgba(34, 211, 238, 0.38);
 }
 * { 
     margin: 0; 
@@ -134,8 +160,8 @@ body {
 }
 
 .article-card {
-    background: rgba(204, 208, 228, 0.705);
-    border: 1px solid rgba(255,255,255,0.1);
+    background: linear-gradient(180deg, rgba(15, 23, 42, 0.74), rgba(15, 23, 42, 0.42));
+    border: 1px solid rgba(255,255,255,0.12);
     border-radius: 28px;
     padding: 25px;
     cursor: pointer;
@@ -145,7 +171,7 @@ body {
     flex-direction: column;
     justify-content: space-between;
     min-height: 220px;
-    box-shadow: 0 24px 70px rgba(0,0,0,0.28);
+    box-shadow: 0 24px 70px rgba(0,0,0,0.28), inset 0 1px 0 rgba(255,255,255,0.08);
 }
 .article-card:hover {
     transform: translateY(-10px) scale(1.01);

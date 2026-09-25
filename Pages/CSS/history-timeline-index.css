@@ -20,12 +20,39 @@ html {
 }
 
 body {
+    position: relative;
     margin: 0;
     min-height: 100vh;
     font-family: 'Inter', sans-serif;
     background: linear-gradient(135deg, var(--bg-dark), rgb(141, 250, 129));
     color: var(--text-main);
     overflow-x: hidden;
+    isolation: isolate;
+}
+
+body::before,
+body::after {
+    content: "";
+    position: fixed;
+    width: 26rem;
+    height: 26rem;
+    border-radius: 50%;
+    filter: blur(90px);
+    opacity: 0.24;
+    z-index: -1;
+    pointer-events: none;
+}
+
+body::before {
+    top: -8rem;
+    right: -6rem;
+    background: rgba(168, 85, 247, 0.7);
+}
+
+body::after {
+    bottom: -9rem;
+    left: -5rem;
+    background: rgba(34, 211, 238, 0.45);
 }
 
 .scroll-progress {
@@ -43,11 +70,11 @@ body {
     max-width: 1100px;
     margin: 26px auto 40px;
     padding: 36px;
-    background: rgba(255, 255, 255, 0.08);
+    background: linear-gradient(180deg, rgba(255,255,255,0.10), rgba(255,255,255,0.04));
     border: 1px solid rgba(255, 255, 255, 0.14);
     border-radius: 32px;
-    backdrop-filter: blur(18px);
-    box-shadow: 0 26px 84px rgba(0, 0, 0, 0.14);
+    backdrop-filter: blur(20px);
+    box-shadow: 0 26px 84px rgba(0, 0, 0, 0.14), inset 0 1px 0 rgba(255,255,255,0.10);
 }
 
 .page-hero {
@@ -169,12 +196,14 @@ body {
 .timeline-card {
     width: 42%;
     max-width: 420px;
-    background: var(--panel-bg);
+    background: linear-gradient(180deg, rgba(17, 24, 39, 0.76), rgba(17, 24, 39, 0.48));
     border: 1px solid var(--era-border, rgba(255, 255, 255, 0.16));
     border-radius: 24px;
     overflow: hidden;
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2), 0 0 40px var(--era-glow, rgba(124, 58, 237, 0.12));
     transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
 }
 
 .timeline-item[data-era="childhood"] .timeline-card {
