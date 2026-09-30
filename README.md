@@ -21,7 +21,7 @@ This site uses an analytics tool from Umami. I use Umami because it is a privacy
 This source code is specially written for myself. Anyone can review the source code and use this code (program code only). In addition to its License, no one is permitted to use any non-program data (my description, photos, etc.) provided in the source code — those data about myself only belong to me and only me.
 
 ## Contribution
-Since this is my personal website, I would like to update, upgrade, and change everything by myself. But if anyone likes the source code they can use it under its License.
+Since this is my personal website, I would like to update, upgrade, and change everything by myself. But if anyone likes the source code they can use it under its License. But Assets (in this source code) belongs to me and only me
 
 ## License
 Copyright (c) 2026 Md. Shafi Un Wasi
