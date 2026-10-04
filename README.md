@@ -13,7 +13,7 @@ The website is static and only written using HTML, CSS, and JavaScript. This als
 `index.html` is the main HTML file which holds everything. `my-style.css` handles the main user interface. The `Pages` folder contains the source of sub-pages and the `Assets` folder has the assets used in this site.
 
 ## Device / Screen Requirement
-Using a **computer** is recommended for best performance. This site can also be viewed on phones.
+The site can be viewed on any screen ratio. But using large screen will give better view.
 
 ## Warning
 This site uses an analytics tool from Umami. I use Umami because it is a privacy-first analytics tool.
