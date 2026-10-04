@@ -2,21 +2,25 @@
 
 This source code belongs to my personal website and portfolio.
 
-In this website I have added:
-1. My Articles: The articles I have written (Not every article is in HTML format, some articles are available as links)
-2. My Projects: All of my projects I have developed. (And a special section that contains my best work)
-3. About Me: A short description about myself, my timeline, etc.
+This website includes:
+1. Articles: Articles I have written; some are available as external links rather than HTML pages.
+2. Projects and work: My projects, selected work, and credentials.
+3. About and timeline: Information about me and my journey.
+4. Updates and contact information.
+5. GitHub and Hackatime statistics on the home page.
 
 The website is static and only written using HTML, CSS, and JavaScript. This also means zero dependencies.
 
 ## How this source code works
-`index.html` is the main HTML file which holds everything. `my-style.css` handles the main user interface. The `Pages` folder contains the source of sub-pages and the `Assets` folder has the assets used in this site.
+`index.html` is the home page. `my-style.css` and `my-script.js` provide the main site's styles and interactions. The `Pages` folder contains the sub-pages and their page-specific styles and scripts; `Pages/privacy-policy-index.html` is the site's privacy policy. `Assets` contains images, article content, and other site assets. `sitemap.xml` lists the public HTML pages for search engines.
+
+The home page displays an analytics notice in the bottom-left corner on each page load. It links to the Privacy Policy and can be dismissed for the current visit.
 
 ## Device / Screen Requirement
 The site can be viewed on any screen ratio. But using large screen will give better view.
 
 ## Warning
-This site uses an analytics tool from Umami. I use Umami because it is a privacy-first analytics tool.
+This site uses Umami Analytics and Google Search Console to understand site visits and search performance. Analytics are used to improve the site, not for advertising. See the [Privacy Policy](Pages/privacy-policy-index.html) for details, including information about external websites linked from this site.
 
 This source code is specially written for myself. Anyone can review the source code and use this code (program code only). In addition to its License, no one is permitted to use any non-program data (my description, photos, etc.) provided in the source code — those data about myself only belong to me and only me.
 

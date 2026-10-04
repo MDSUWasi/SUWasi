@@ -2,6 +2,18 @@ const hamburger = document.querySelector('.hamburger');
 const navLinks = document.querySelector('.nav-links');
 const navItems = document.querySelectorAll('.nav-links a');
 const themeToggle = document.getElementById('themeToggle');
+const analyticsPopup = document.getElementById('analytics-popup');
+const analyticsPopupClose = document.getElementById('analytics-popup-close');
+
+if (analyticsPopup) {
+    analyticsPopup.hidden = false;
+}
+
+if (analyticsPopup && analyticsPopupClose) {
+    analyticsPopupClose.addEventListener('click', () => {
+        analyticsPopup.hidden = true;
+    });
+}
 
 function toggleMenu() {
     const isOpen = navLinks.classList.contains('active');
