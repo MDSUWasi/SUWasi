@@ -5,7 +5,7 @@ const achievements = [
         category: "academic",
         icon: "🏅",
         date: "August 2025",
-        desc: "Awarded for achieving excellent results in the examination."
+        desc: "Awarded by my school for outstanding results in the SSC examination."
     },
     {
         id: 2,

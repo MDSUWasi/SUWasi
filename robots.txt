@@ -5,13 +5,9 @@
 User-agent: *
 Allow: /
 
-# Block 404 page from indexing (prevents duplicate content penalties)
+# Block 404 page from indexing
 Disallow: /*404*
 
-# Block raw image files from appearing in image search (keep them embedded only)
-Disallow: /Assets/Images/*.jpg$
-Disallow: /Assets/Images/*.jpeg$
-Disallow: /Assets/Images/*.png$
 
 # Sitemap location
 Sitemap: https://mdsuwasi.github.io/SUWasi/sitemap.xml
