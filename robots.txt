@@ -1,5 +1,5 @@
 # Robots.txt for SUWasi Portfolio
-# https://mdsuwasi.github.io/SUWasi/
+# https://suwasi.pages.dev/
 
 # Allow all search engines to crawl everything
 User-agent: *
@@ -10,7 +10,7 @@ Disallow: /*404*
 
 
 # Sitemap location
-Sitemap: https://mdsuwasi.github.io/SUWasi/sitemap.xml
+Sitemap: https://suwasi.pages.dev/sitemap.xml
 
 # Search Engine-Specific Guidelines
 # ---------------------------------
@@ -31,5 +31,4 @@ Allow: /
 User-agent: CCBot
 Allow: /
 
-# Host information
-Host: https://mdsuwasi.github.io/SUWasi/
+# Host information (removed — not a valid robots.txt directive)

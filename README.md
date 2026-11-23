@@ -1,6 +1,6 @@
 # THIS IS MY PERSONAL PORTFOLIO
 
-This source code belongs to my personal website and portfolio.
+This source code belongs to my personal website and portfolio, hosted on [Cloudflare Pages](https://pages.cloudflare.com/) at [https://suwasi.pages.dev/](https://suwasi.pages.dev/).
 
 This website includes:
 1. Articles: Articles I have written; some (maximum of them) are available as external links rather than HTML pages.
@@ -12,7 +12,7 @@ This website includes:
 The website is static and only written using HTML, CSS, and JavaScript. This also means zero dependencies.
 
 ## How this source code works
-`index.html` is the home page. `my-style.css` and `my-script.js` provide the main site's styles and interactions. The `Pages` folder contains the sub-pages and their page-specific styles and scripts; `Assets` contains images, article content, and other site assets. `sitemap.xml` lists the public HTML pages for search engines.
+`index.html` is the home page. `my-style.css` and `my-script.js` provide the main site's styles and interactions. The `Pages` folder contains the sub-pages and their page-specific styles and scripts; `Assets` contains images, article content, and other site assets. `sitemap.xml` lists the public HTML pages for search engines. `_headers` defines security and cache headers for Cloudflare Pages.
 
 `Pages/privacy-policy-index.html` is the site's privacy policy.
 
@@ -22,7 +22,10 @@ The home page displays an analytics notice in the bottom-left corner on each pag
 The site can be viewed on any screen ratio. But using large screen will give better view.
 
 ## Warning
-This site uses Umami Analytics and Google Search Console to understand site visits and search performance. Analytics are used to improve the site, not for advertising. See the [Privacy Policy](Pages/privacy-policy-index.html) for details, including information about external websites linked from this site.
+This site uses Cloudflare Pages Analytics and Google Search Console to understand site visits and search performance. Analytics are used to improve the site, not for advertising. See the [Privacy Policy](Pages/privacy-policy-index.html) for details, including information about external websites linked from this site.
+
+## Deployment
+This site is deployed on Cloudflare Pages. Push to the connected branch to trigger an automatic deployment. Security headers and cache policies are managed via `_headers`.
 
 This source code is specially written for **myself**. Anyone can review the source code and use this code (program code only).
 In addition to its License, no one is permitted to use any non-program data (my description, photos, etc.) provided in the source code — those data about myself only belong to me and only me.

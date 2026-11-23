@@ -1,0 +1,15 @@
+/*
+  X-Frame-Options: DENY
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: geolocation=(), microphone=(), camera=()
+  Content-Security-Policy: default-src 'self'; img-src 'self' data: https:; script-src 'self' https://github-readme-stats.shion.dev https://streak-stats.demolab.com https://github-readme-stats.hackclub.dev https://heatmap.shymike.dev; style-src 'self' 'unsafe-inline'; connect-src 'self';
+
+/sitemap.xml
+  Cache-Control: public, max-age=86400
+
+/robots.txt
+  Cache-Control: public, max-age=86400
+
+/Assets/*
+  Cache-Control: public, max-age=31536000, immutable

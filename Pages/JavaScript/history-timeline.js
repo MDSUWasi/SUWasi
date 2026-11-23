@@ -3,21 +3,28 @@
 
     const items = document.querySelectorAll('.timeline-item');
     const progress = document.getElementById('scrollProgress');
-    const timelineSvg = document.getElementById('timelineSvg');
     const timelinePath = document.getElementById('timelinePath');
     const timelinePathProgress = document.getElementById('timelinePathProgress');
     const container = document.getElementById('timelineContainer');
 
+    // Local resize timer to avoid polluting global namespace
+    let resizeTimer = null;
+
     function buildCurvedPath() {
         if (window.innerWidth <= 768) return;
+        if (!container || !timelinePath || !timelinePathProgress) return;
+        if (items.length === 0) return;
 
         const containerRect = container.getBoundingClientRect();
         const w = containerRect.width;
         const h = containerRect.height;
 
+        if (w <= 0 || h <= 0) return;
+
         const points = [];
-        items.forEach(item => {
+        items.forEach(function (item) {
             const point = item.querySelector('.timeline-point');
+            if (!point) return;
             const pointRect = point.getBoundingClientRect();
 
             const px = pointRect.left + pointRect.width / 2 - containerRect.left;
@@ -33,12 +40,14 @@
         const scaleX = svgW / w;
         const scaleY = svgH / h;
 
-        const scaled = points.map(p => ({
-            x: p.x * scaleX,
-            y: p.y * scaleY
-        }));
+        const scaled = points.map(function (p) {
+            return {
+                x: p.x * scaleX,
+                y: p.y * scaleY
+            };
+        });
 
-        let d = `M ${scaled[0].x.toFixed(2)} ${scaled[0].y.toFixed(2)}`;
+        let d = 'M ' + scaled[0].x.toFixed(2) + ' ' + scaled[0].y.toFixed(2);
 
         for (let i = 1; i < scaled.length; i++) {
             const prev = scaled[i - 1];
@@ -48,26 +57,35 @@
             const cp2x = curr.x - (curr.x - prev.x) * 0.5;
             const cp2y = curr.y;
 
-            d += ` C ${cp1x.toFixed(2)} ${cp1y.toFixed(2)}, ${cp2x.toFixed(2)} ${cp2y.toFixed(2)}, ${curr.x.toFixed(2)} ${curr.y.toFixed(2)}`;
+            d += ' C ' + cp1x.toFixed(2) + ' ' + cp1y.toFixed(2) +
+                ', ' + cp2x.toFixed(2) + ' ' + cp2y.toFixed(2) +
+                ', ' + curr.x.toFixed(2) + ' ' + curr.y.toFixed(2);
         }
 
         timelinePath.setAttribute('d', d);
         timelinePathProgress.setAttribute('d', d);
         const totalLength = timelinePathProgress.getTotalLength();
-        timelinePathProgress.style.strokeDasharray = totalLength;
-        timelinePathProgress.style.strokeDashoffset = totalLength;
+        if (totalLength > 0) {
+            timelinePathProgress.style.strokeDasharray = totalLength;
+            timelinePathProgress.style.strokeDashoffset = totalLength;
+        }
         timelinePathProgress.style.opacity = '1';
         timelinePathProgress.style.transition = 'stroke-dashoffset 0.3s ease';
     }
 
     function updateScrollProgress() {
+        if (!progress) return;
+
         const scrollTop = window.pageYOffset;
         const docHeight = document.documentElement.scrollHeight - window.innerHeight;
         const pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
         progress.style.width = pct + '%';
 
-        if (window.innerWidth > 768 && timelinePathProgress.getAttribute('d')) {
+        if (window.innerWidth > 768 && timelinePathProgress &&
+            timelinePathProgress.getAttribute('d') && container) {
             const totalLength = timelinePathProgress.getTotalLength();
+            if (totalLength <= 0) return;
+
             const containerRect = container.getBoundingClientRect();
             const viewportCenter = window.innerHeight * 0.5;
             const visibleRange = viewportCenter - containerRect.top;
@@ -82,28 +100,32 @@
         }
     }
 
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-                observer.unobserve(entry.target);
-            }
+    if (items.length > 0) {
+        const observer = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.15,
+            rootMargin: '0px 0px -60px 0px'
         });
-    }, {
-        threshold: 0.15,
-        rootMargin: '0px 0px -60px 0px'
-    });
 
-    items.forEach(item => observer.observe(item));
+        items.forEach(function (item) {
+            observer.observe(item);
+        });
+    }
 
-    requestAnimationFrame(() => {
+    requestAnimationFrame(function () {
         setTimeout(buildCurvedPath, 100);
     });
 
     window.addEventListener('scroll', updateScrollProgress, { passive: true });
-    window.addEventListener('resize', () => {
-        clearTimeout(window._timelineResizeTimer);
-        window._timelineResizeTimer = setTimeout(buildCurvedPath, 150);
+    window.addEventListener('resize', function () {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(buildCurvedPath, 150);
     });
 
     updateScrollProgress();
